@@ -1,0 +1,579 @@
+/* 
+Theme Name: Starter
+Author: Alexander Tchernitchenko
+Author URI: http://tchernitchenko.com
+Description: WP Starter Theme
+Version: 1.0.0
+Text Domain:
+
+*/
+
+
+/*-''-_-''-_-''-_-''-_''-_-''-_-''-_-''-_-''-_-''-_-''-_-''-_-''
+
+# Typography
+# Elements
+# Layout
+# Header
+# Navigation
+# Pagination
+# Widgets
+# Footer
+
+''-_-''-_-''-_-''-_''-_-''-_-''-_-''-_-''-_-''-_-''-_-''-_-''-*/
+
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: serif;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+	font-family: sans-serif;
+	font-size: 16px;
+	color: #333;
+
+}
+
+p {
+	font-family: sans-serif;
+	font-size: inherit;
+	line-height: 16px;
+}
+
+
+
+h1 { font-size: 2.571em; }
+h2 { font-size: 2.1em; }
+h3 { font-size: 1.8em; }
+h4 { font-size: 1.6em; }
+h5 { font-size: 1.4em; }
+h6 { font-size: 1.2em; }
+
+a {
+	color: #333;
+	text-decoration: none;
+}
+
+a:hover {
+	color: blue;
+}
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+figure {
+	margin: 0;
+}
+
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+
+.site-content {
+	overflow: auto;
+}
+
+
+
+@media screen and (min-width: 45em) {
+	.site {
+		max-width: 60em;
+		margin: 0 auto;
+	}
+	.sidebar-right .site-main,
+	.sidebar-left .site-main {
+		margin: 0;
+		padding-left: 1em;
+		padding-right: 1em;
+		width: calc(100% - 16em);
+	}
+
+	.sidebar-right .site-main {
+		float: left;
+	}
+
+	.sidebar-left .site-main {
+		float: right;
+	}
+
+	.sidebar-right .widget-area,
+	.sidebar-left .widget-area {
+		float: left;
+		margin: 0;
+		width: 16em;
+	}
+
+	.sidebar-right .widget-area {
+		padding-right: 1em;
+	}
+
+	.sidebar-left .widget-area {
+		padding-left: 1em;
+	}
+
+	/* No sidebar */
+	.sidebar-none .site-main {
+		margin: 0 auto;
+		width: 85%;
+	}
+
+	.sidebar-none .widget-area {
+		margin: 0 auto;
+		width: 85%;
+	}
+
+	.sidebar-none .widget {
+		padding: 0 1em;
+		width: 50%;
+	}
+
+
+}
+
+@media screen and (min-width: 61em) {
+
+	/* Right sidebar */
+	.sidebar-right .site-main,
+	.sidebar-left .site-main {
+		margin: 0;
+		padding: 0;
+		padding-right: 1.3em;
+		width: calc( 100% - 17em );
+	}
+
+	.sidebar-right .widget-area,
+	.sidebar-left .widget-area {
+		float: left;
+		padding: 0;
+		width: 17em;
+	}
+
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+
+.nav-top-bar {
+	overflow: auto;
+	height: 50px;
+	background: transparent;
+}
+
+.main-navigation {
+	clear: both;
+	display: block;
+	float: left;
+	width: 100%;
+}
+
+.main-navigation ul {
+	display: none;
+	float:left;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.main-navigation ul ul {
+	display: none;
+	padding-left: 2em;
+	width: 100%;
+}
+
+.main-navigation ul.toggled-on {
+	display: block;
+}
+
+.main-navigation a {
+	color: #333;
+	display: block;
+	font-size: 1em;
+	padding: 0.8em 1em;
+	position: relative;
+	text-decoration: none;
+}
+
+.main-navigation li {
+	clear:both;
+	font-family: sans-serif;
+	position: relative;
+
+}
+
+.main-navigation .nav-menu > ul > li:first-child,
+.main-navigation .nav-menu > li:first-child {
+	border-top: 0;
+}
+
+.main-navigation .menu-item-has-children > a {
+	padding-right: 48px;
+}
+
+.main-navigation a:hover,
+.main-navigation a:focus {
+	border-bottom: 0;
+	text-decoration: none;
+	color: blue;
+}
+
+
+.current-menu-parent > a {
+	color: #333;
+}
+
+.current-menu-item > a {
+	color: #333;
+}
+
+.current_page_item > a { 
+	text-decoration: none;
+	color: blue;
+}
+
+.no-js .main-navigation ul ul {
+	display: block;
+}
+
+
+/* Nested elements */
+.dropdown-toggle {
+	background-color: transparent;
+	border: 0;
+	box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	content: "";
+	height: 56px;
+	padding: 0 .8em 0 0;
+	position: absolute;
+	right: 0;
+	text-transform: lowercase; /* Stop screen readers to read the text as capital letters */
+	top: 0;
+	width: 42px;
+}
+
+.dropdown-toggle:after {
+	color: #333;
+	content: "\f078";
+	font-family: 'FontAwesome';
+	font-size: 20px;
+	left: 1px;
+	line-height: 20px;
+	position: relative;
+	top: 0;
+	width: 52px;
+}
+
+.dropdown-toggle.toggle-on:after {
+	content: "\f077";
+}
+
+.dropdown-toggle:hover,
+.dropdown-toggle:focus {
+	background-color: transparent;
+}
+
+
+/*** Toggled mobile menu ***/
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: left;
+	width: 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+
+.main-navigation.toggled div {
+	margin-top:50px;
+	padding: .2em .2em;
+	position: absolute;
+	top: 0;
+	z-index: 1;
+}
+
+.nav-menu {
+	padding:1em;
+	margin-bottom: 3em;
+	background-color: #fff;
+	border: 1px solid #000;
+}
+
+.main-navigation.toggled ul.nav-menu {
+	max-height: calc(100vh - 8em);
+	overflow-y: auto;
+	width: calc(100vw - 9px);
+	max-width: calc(100vw - 9px);
+}
+
+.main-navigation.toggled ul ul {
+	display: none;
+}
+
+.main-navigation.toggled ul ul.toggled-on,
+.main-navigation.toggled ul ul.toggled-on > ul {
+	display: block;
+}
+
+
+/*** Menu for desktop ***/
+@media screen and (min-width: 45em) {
+
+	.nav-top-bar {
+		max-width: 60em;
+		margin: 0 auto;
+		padding-left: .3em;
+	}
+
+	.main-navigation {
+		width: inherit;
+	}
+
+	.main-navigation,
+	.main-navigation.toggled {
+		position:relative;
+	}
+
+	.main-navigation ul {
+		display: block;
+	}
+
+	.main-navigation ul ul {
+		margin-left: 0.8em;
+		padding-left: 0;
+	}
+
+	.main-navigation ul,
+	.main-navigation.toggled ul {
+		max-height: none;
+		padding-left: 0;
+	}
+
+	.main-navigation a {
+		font-size: 1em;
+		padding: .8em .8em;
+	}
+
+	.main-navigation .menu-item-has-children > a {
+		padding-right: 2em;
+	}
+
+	.main-navigation li {
+		border: none;
+		display: inline-block;
+		font-family: sans-serif;
+	}
+
+	.main-navigation li li {
+		display: block;
+	}
+
+	.main-navigation .current-menu-item > a,
+	.main-navigation .current-menu-ancestor > a {
+		font-weight: 500;
+		text-decoration: none;
+		color: blue;
+	}
+
+	.main-navigation ul ul.toggled-on {
+		background: #fff;
+		display: block;
+		margin-left: 0;
+		position:absolute;
+		width: 12em;
+		z-index: 10;
+	}
+
+	.main-navigation ul ul ul.toggled-on {
+		position: relative;
+	}
+
+	.main-navigation ul ul ul a {
+		padding-left: 2em;
+	}
+
+	ul.nav-menu {
+		border: none;
+		background: transparent;
+	}
+
+	.dropdown-toggle {
+		height: 50px;
+		right: 0;
+		top: -2px;
+		width: 20px;
+	}
+
+	.dropdown-toggle:after {
+		font-size: 10px;
+		left: 1px;
+		line-height: 0;
+		top: 1px;
+		width: 20px;
+	}
+
+}
+
+/*--------------------------------------------------------------
+## Hamburger icon
+--------------------------------------------------------------*/
+#nav-toggle {
+	cursor: pointer;
+	left: 13px;
+	padding: 10px 23px 14px 0;
+	position: absolute;
+	top: 13px;
+}
+
+#nav-toggle:hover,
+#nav-toggle:focus {
+	background: transparent;
+}
+
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+	background: #000;
+	content: '';
+	display: block;
+	height: 3px;
+	position: absolute;
+	width: 23px;
+}
+
+#nav-toggle span:before {
+	top: -9px;
+}
+#nav-toggle span:after {
+	bottom: -9px;
+}
+
+#nav-toggle.active span:before,
+#nav-toggle.active span:after {
+	top: 0;
+}
+
+#nav-toggle.active span {
+	background-color: transparent;
+}
+
+#nav-toggle.active span:before {
+	transform: rotate(45deg);
+}
+
+#nav-toggle.active span:after {
+	transform: rotate(-45deg);
+}
+
+#nav-toggle span:before,
+#nav-toggle span:after {
+	transition: all 100ms ease-in-out;
+}
+
+
+@media screen and (min-width: 45em) {
+	#nav-toggle {
+		display:none;
+	}
+}
+
+/*--------------------------------------------------------------
+# Pagination
+--------------------------------------------------------------*/
+.paging-navigation {
+	margin-bottom: 1em;
+	text-align: center;
+}
+
+.paging-navigation ul {
+	display: inline-block;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.paging-navigation li {
+	display: inline-block;
+}
+
+.paging-navigation li a {
+	padding: 0;
+	margin: .7em;
+}
+
+.paging-navigation .dots {
+	color: #18baaf;
+}
+
+.paging-navigation .current {
+	color: blue;
+	margin: .7em;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
